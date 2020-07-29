@@ -1,0 +1,5 @@
+export const actionTypes={   
+    GET_SURVEY : 'GET_SURVEY',
+    GET_SURVEY_SUCCESS : 'GET_SURVEY_SUCCESS',
+    GET_SURVEY_FAILURE : 'GET_SURVEY_FAILURE'
+}
