@@ -1,12 +1,25 @@
 import React, { Component } from "react";
 import SurveyComponent from "../components/survey"
-import defaultScript from "../util/defaultScript"
+import { HashRouter as Router, Switch, Route } from "react-router-dom"
+import SurveyPage from "../pages/survey"
+import ThankyouPage from "../pages/thankyou"
 
 class MainApp extends Component {
+
     debugger
     render() {
+        
         return (<>
-            <SurveyComponent config={defaultScript}></SurveyComponent>
+            <Router>
+                <Switch>
+                    <Route exact path="/thankyou" component={ThankyouPage}>
+                    </Route>
+                    <Route path="/" component={SurveyPage}>
+                    </Route>
+
+
+                </Switch>
+            </Router>
         </>)
     }
 }

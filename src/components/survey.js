@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { Component,PureComponent } from "react";
 import * as Survey from "../survey-lib/survey-react/survey.react"
 import "../survey-lib/survey-react/survey.min.css"
 import { bindActionCreators } from "redux";
-import * as surveyAction from "../actions/surveyActions";
+import {saveSurvey} from '../actions/index'
 import { connect } from "react-redux";
 
 
@@ -27,21 +27,22 @@ class SurveyComponent extends Component {
 
 
     }
-    onComplete(survey, options) {
-        console.log("Survey results: " + JSON.stringify(survey.data));
-        window.parent.postMessage("complete", "*")
+    onComplete=(survey, options)=> {
+        
+        let responseModel={
+            id:this.props.id,
+            response:JSON.stringify(survey.data)
+        }
+        this.props.saveSurvey(responseModel)
+        
     }
-    getSurvey(){
-        console.log('button clicked......')
-        this.props.actions.getSurvey('KG');
-    }
+   
     render() {
         var model = new Survey.Model(this.surveyConfig.surveyScript);
   
         return (
             <>
                 <Survey.Survey model={model} onComplete={this.onComplete}></Survey.Survey>
-                <button style={{margin:20}} onClick={()=>this.getSurvey()}>click me</button>
             </>
         )
     }
@@ -51,9 +52,7 @@ const mapStateToProps = ({surveyReducers}) => ({
     surveyReducers:surveyReducers
 })
 
-const mapDispatchToProps =(dispatch)=>{
-    return{
-        actions: bindActionCreators(surveyAction,dispatch)
-    }
-}
-export default connect(mapStateToProps,mapDispatchToProps)(SurveyComponent);
+
+export default connect(mapStateToProps,{
+    saveSurvey
+})(SurveyComponent);
