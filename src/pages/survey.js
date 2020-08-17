@@ -16,7 +16,8 @@ class Survey extends Component {
     componentDidMount = () => {
      
         const { id } = querryString.parse(this.props.location.search)
-    
+        this.props.getSurvey(id)
+        
         
     }
 

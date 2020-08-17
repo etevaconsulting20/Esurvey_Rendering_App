@@ -7,8 +7,8 @@ const ThankyouPage = () => {
         <>
             <div style={{ margin: "auto" }}>
                 <Message
-                    header='Thankyou'
-                    content='We have recived your response'
+                    header='Thank You'
+                    content='We have received your response'
                 />
             </div>
         </>
