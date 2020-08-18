@@ -13,15 +13,18 @@ const initState = {
 export const surveyReducers = (state = initState, action) => {
     switch (action.type) {
         case actionTypes.GET_SURVEY:
-
+            
             return { ...state, surveyId: action.payload, loading: true }
 
         case actionTypes.GET_SURVEY_SUCCESS:
             let questions = JSON.parse(action.payload.data.questions)
-            let logo = `data:image/png;base64,${action.payload.data.logo}`
+            let logo = action.payload.data.logo?`data:image/png;base64,${action.payload.data.logo}`:null
            
-
-            return { ...state, surveyScript: { ...action.payload.data, questions: questions, logo: logo }, loading: false }
+            if(logo){
+                return { ...state, surveyScript: { ...action.payload.data, questions: questions, logo: logo }, loading: false }
+            }
+            return { ...state, surveyScript: { ...action.payload.data, questions: questions,}, loading: false }
+           
 
         case actionTypes.GET_SURVEY_FAILURE:
             return { ...state, loading: false }

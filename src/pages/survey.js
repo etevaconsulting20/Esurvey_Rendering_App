@@ -14,24 +14,21 @@ const querryString = require("query-string");
 
 class Survey extends Component {
     componentDidMount = () => {
-     
         const { id } = querryString.parse(this.props.location.search)
         this.props.getSurvey(id)
-        
-        
     }
 
     render() {
-        const { surveyScript,loading,surveyId } = this.props
-        
+        const { surveyScript, loading, surveyId } = this.props
+
         return (
-            
+
             <>
-            {
-                loading?<Dimmer active>
-                <Loader>Loading</Loader>
-            </Dimmer>:null
-            }
+                {
+                    loading ? <Dimmer active>
+                        <Loader>Loading</Loader>
+                    </Dimmer> : null
+                }
                 {surveyScript ? <SurveyComponent id={surveyId} config={{ ...defaultScript, surveyScript: surveyScript }} ></SurveyComponent> : <p>no script </p>}
             </>
         )
@@ -42,5 +39,5 @@ const mapStateToProps = ({ surveyReducers }) => {
 }
 export default connect(mapStateToProps, {
     getSurvey,
-    
+
 })(withRouter(Survey))

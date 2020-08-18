@@ -33,7 +33,7 @@ class SurveyComponent extends Component {
             id:this.props.id,
             response:JSON.stringify(survey.data)
         }
-        this.props.saveSurvey(responseModel)
+        this.props.saveSurvey(responseModel);
         
     }
    

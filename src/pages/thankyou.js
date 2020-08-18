@@ -1,8 +1,17 @@
-import React from "react";
+import React,{useEffect} from "react";
 import {Message} from "semantic-ui-react"
 
 
 const ThankyouPage = () => {
+    useEffect(()=>{
+        debugger
+        window.parent.postMessage(
+            JSON.stringify({
+                type: "survey-submit",
+                message: "survey response completed"
+            }), document.referrer
+        );
+    })
     return (
         <>
             <div style={{ margin: "auto" }}>
