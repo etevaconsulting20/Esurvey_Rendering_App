@@ -23,7 +23,7 @@ const saveSurveyToServer = async (model) => {
             
         }
     }
-    return await axios.post(`${appConfig.apiUrl}/SurveysSubmit`,model, config)
+    return await axios.post(`${appConfig.apiUrl}/SurveyResponses`,model, config)
 }
 function* getSurvey() {
     try {
