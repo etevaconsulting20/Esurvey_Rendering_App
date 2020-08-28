@@ -28,11 +28,13 @@ class SurveyComponent extends Component {
 
     }
     onComplete=(survey, options)=> {
-        
+        console.log("survey.............",survey)
         let responseModel={
             id:this.props.id,
+            type:this.props.config.surveyScript.type,
             response:JSON.stringify(survey.data)
         }
+        console.log("responseModel.............",responseModel)
         this.props.saveSurvey(responseModel);
         
     }

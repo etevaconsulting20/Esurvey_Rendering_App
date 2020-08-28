@@ -46,6 +46,7 @@ function* saveSurvey() {
         if (survey.surveyId) {
             let model = {
                 "surveyId": survey.surveyId,
+                "type":survey.type,
                 "response": survey.response
             }
             const response = yield call(saveSurveyToServer, model)
