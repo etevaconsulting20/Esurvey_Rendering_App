@@ -21,23 +21,19 @@ class Survey extends Component {
     }
 
     setJson=(value)=>{
-        // console.log('setJson.........',value)
       }
 
       postAnswerJSON=(chatResponse)=>{
-        console.log('postAnswerJSON..........',chatResponse)
         let responseModel={
             id:this.props.surveyId,
             type:this.props.surveyScript.type,
             response:JSON.stringify(chatResponse)
         }
-        console.log("responseModel.............",responseModel)
         this.props.saveSurvey(responseModel);
       }
 
     render() {
         const { surveyScript, loading, surveyId } = this.props
-        console.log('json..........',this.props)
         // const surveyType = surveyScript.type;
         return (
 

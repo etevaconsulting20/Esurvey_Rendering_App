@@ -70,7 +70,6 @@ class ChatBot extends Component {
   }
 
   changeSteps=(_steps)=>{
-    // console.log('Step change',_steps)
     this.setState({steps:_steps});
   }
 
@@ -278,7 +277,6 @@ class ChatBot extends Component {
       // let chatResponseObject = {id:mid,value:chatResponseValue}
       let questionTitle = step.metadata.questionTitle
       chatResponseObject={[questionTitle]:chatResponseValue}
-      console.log("chatResponseObject.............",chatResponseObject)
       this.answerJosn.push(chatResponseObject);
     }
   }
@@ -295,7 +293,6 @@ class ChatBot extends Component {
       this.props.postAnswerJSON(this.answerJosn);
     }
     this.props.setJson(this.answerJosn);
-    // console.log('Trigger',this.answerJosn,isEnd);
     if (data && data.value) {
       currentStep.value = data.value;
     }
@@ -756,7 +753,6 @@ class ChatBot extends Component {
       : currentStep.placeholder || placeholder;
 
     const inputAttributesOverride = currentStep.inputAttributes || inputAttributes;
-    // console.log(currentStep,this.state.isShowOptions);
     return (  
       <div className={`rsc ${className}`}>
         {floating && (

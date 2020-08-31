@@ -35,13 +35,11 @@ function* getSurvey() {
             yield put(getSurveySuccess(response))
         }
     } catch (error) {
-        console.log(error)
         yield put(getSurveyFailure(error))
     }
 }
 function* saveSurvey() {
     try {
-        debugger
         let survey = yield select(surveyReducer);
         if (survey.surveyId) {
             let model = {
@@ -56,7 +54,6 @@ function* saveSurvey() {
             }
         }
     } catch (error) {
-        console.log(error)
         yield put(saveSurveyFailure(error))
     }
 }

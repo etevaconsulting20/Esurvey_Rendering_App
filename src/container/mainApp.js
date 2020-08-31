@@ -6,7 +6,6 @@ import ThankyouPage from "../pages/thankyou"
 
 class MainApp extends Component {
 
-    debugger
     render() {
         
         return (<>

@@ -30,7 +30,6 @@ export const surveyReducers = (state = initState, action) => {
             return { ...state, loading: false }
 
         case actionTypes.SAVE_SURVEY_RESPONSE:
-            debugger
             return { ...state, loading: true, surveyId: action.payload.id,type: action.payload.type ,response: action.payload.response }
 
         case actionTypes.SAVE_SURVEY_RESPONSE_SUCCESS:

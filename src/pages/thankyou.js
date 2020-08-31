@@ -4,7 +4,6 @@ import {Message} from "semantic-ui-react"
 
 const ThankyouPage = () => {
     useEffect(()=>{
-        debugger
         window.parent.postMessage(
             JSON.stringify({
                 type: "survey-submit",

@@ -35,9 +35,7 @@ class MultiselectList extends Component {
 
 
     static getDerivedStateFromProps(nextProps, prevState) {
-        //console.log(prevState,nextProps);
         if (nextProps.inputText !== prevState.inputText) {  
-            //console.log('Search list : ',prevState._searchList)
             var newList = _.filter(prevState._searchList, function(o) {
                 return (o.label.toLowerCase().includes(nextProps.inputText.toLowerCase()) 
                 && !o.ischecked)
@@ -67,8 +65,6 @@ class MultiselectList extends Component {
     }
 
     render() {
-        //console.log('Filter list ',this.state._inputText)
-        console.log("this.props.....multiselect",this.props);
         return (
             this.state._inputText !== "" || this.state._selectedList.length>0 ?
             <div>
