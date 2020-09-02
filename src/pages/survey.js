@@ -43,7 +43,6 @@ class Survey extends Component {
                         <Loader>Loading</Loader>
                     </Dimmer> : null
                 }
-                {/* {surveyScript ? <SurveyComponent id={surveyId} config={{ ...defaultScript, surveyScript: surveyScript }} ></SurveyComponent> : <p>no script </p>} */}
            
                 {surveyScript ? 
                 <>

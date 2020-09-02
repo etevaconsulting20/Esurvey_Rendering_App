@@ -24,7 +24,13 @@ var defaultScript = {
                 ]
             },
             { type: "text", inputType: "date", name: "dateOFBirth", title: "What is your date of birth", isRequired: true },
-
+            {
+                type: "text",
+                name: "Range",
+                inputType: "range",
+                min: "35",
+                max: "75"
+               },
             {
                 type: "radiogroup",
                 name: "experience",

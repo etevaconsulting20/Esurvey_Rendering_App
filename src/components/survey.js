@@ -33,6 +33,7 @@ class SurveyComponent extends Component {
             type:this.props.config.surveyScript.type,
             response:JSON.stringify(survey.data)
         }
+        console.log("response model.........",responseModel)
         this.props.saveSurvey(responseModel);
         
     }
