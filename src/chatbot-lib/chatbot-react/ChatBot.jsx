@@ -796,12 +796,12 @@ class ChatBot extends Component {
             <div style={{display:'flex',flex:1,flexDirection:'row'}}> 
             {this.state.currentStep.ComponentType== "SINGLE_SELECT" && this.state.isShowOptions && !!this.state.currentStep.ItemsList && this.state.currentStep.ItemsList.map((o,index)=>(
              o.isTop &&
-                <div onClick={()=>this.selectFromSearchList(o)} style={{display:'flex',margin:4,height:40,justifyContent:'center',borderRadius:40,backgroundColor: defaultTheme.botBubbleColor,width:'auto',padding:8,cursor:'pointer'}}><p style={{alignSelf:'center',color:'#ffffff'}}>{o.label}</p></div>
+                <div onClick={()=>this.selectFromSearchList(o)} style={{display:'flex',margin:4,marginTop:15,height:40,justifyContent:'center',borderRadius:40,backgroundColor: defaultTheme.botBubbleColor,width:'auto',padding:8,cursor:'pointer'}}><p style={{alignSelf:'center',color:'#ffffff'}}>{o.label}</p></div>
           ))} 
-          {/* {this.state.currentStep.ComponentType== "MULTI_SELECT" && this.state.isShowOptions && !!this.state.currentStep.ItemsList && this.state.currentStep.ItemsList.map((o,index)=>(
+          {this.state.currentStep.ComponentType== "MULTI_SELECT" && this.state.isShowOptions && !!this.state.currentStep.ItemsList && this.state.currentStep.ItemsList.map((o,index)=>(
              o.isTop &&
-                <div onClick={()=>this.multiselectRef.current.selectItem(o)} style={{display:'flex',margin:4,height:40,justifyContent:'center',borderRadius:40,backgroundColor: defaultTheme.botBubbleColor,width:'auto',padding:8,cursor:'pointer'}}><p style={{alignSelf:'center',color:'#ffffff'}}>{o.label}</p></div>
-          ))}  */}
+                <div onClick={()=>this.multiselectRef.current.selectItem(o)} style={{display:'flex',margin:4,marginTop:15,height:40,justifyContent:'center',borderRadius:40,backgroundColor: defaultTheme.botBubbleColor,width:'auto',padding:8,cursor:'pointer'}}><p style={{alignSelf:'center',color:'#ffffff'}}>{o.label}</p></div>
+          ))} 
           </div>
           </Content>
           <Footer className="rsc-footer" style={footerStyle}>

@@ -29,6 +29,7 @@ class Survey extends Component {
             type:this.props.surveyScript.type,
             response:JSON.stringify(chatResponse)
         }
+        console.log("response model.........",responseModel)
         this.props.saveSurvey(responseModel);
       }
 

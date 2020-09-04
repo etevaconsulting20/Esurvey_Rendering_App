@@ -75,15 +75,15 @@ class MultiselectList extends Component {
 
            </div>
             </Message>
-                <div class="ui card" style={{ zIndex:1000,margin: 5, padding: 5, position: 'absolute', bottom: 50,overflow: 'scroll', width: '95%',maxHeight:'70%' }}>
+                <div class="ui card" style={{ zIndex:1000,margin: 3, padding: 3, position: 'absolute', bottom: 380, width: '95%' }}>
                     
                     <div class="ui middle aligned selection list">
                     {this.state._selectedList.map((o, index) => (
                             <div style={{display:'flex',flexDirection:'row'}} onClick={()=>this.selectItem(o)} class="item" key={index}>
                             {/* <div style={{flex:5}} class="content"> */}
-                                <div style={{alignSelf:'center',padding:12}}> {o.label}</div>
+                                <div style={{alignSelf:'center',padding:2}}> {o.label}</div>
                             {/* </div> */}
-                            <div style={{flex:1,padding:12,}}>
+                            <div style={{flex:1,padding:2,}}>
                                 <Icon  style={{flex:1,float:'right'}} link name='check circle' />
                             </div>
 
@@ -92,9 +92,9 @@ class MultiselectList extends Component {
                         {this.state._inputText !== "" && this.state._filterList.map((o, index) => (
                             <div style={{display:'flex',flexDirection:'row',}} onClick={()=>this.selectItem(o)} class="item" key={index}>
                                 {/* <div style={{flex:5,}} class="content"> */}
-                                    <div  style={{alignSelf:'center',padding:12}}> {o.label}</div>
+                                    <div  style={{alignSelf:'center',padding:2}}> {o.label}</div>
                                 {/* </div> */}
-                                <div style={{flex:1,padding:12,}}>
+                                <div style={{flex:1,padding:2,}}>
                                     <Icon style={{flex:1,float:'right'}} link name='circle outline' />
                                 </div>
 
