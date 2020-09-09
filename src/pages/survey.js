@@ -44,8 +44,8 @@ class Survey extends Component {
                         <Loader>Loading</Loader>
                     </Dimmer> : null
                 }
-           
-                {surveyScript ? 
+           <SurveyComponent id={surveyId} config={defaultScript} ></SurveyComponent>
+                {/* {surveyScript ? 
                 <>
                 {surveyScript.type == "Survey" &&  <SurveyComponent id={surveyId} config={{ ...defaultScript, surveyScript: surveyScript }} ></SurveyComponent>}
                 {surveyScript.type == 'ChatBot' &&
@@ -59,7 +59,7 @@ class Survey extends Component {
                     ></ChatBot>
                     }</>}
                 </> : 
-                <p>no script </p>}
+                <p>no script </p>} */}
             </>
         )
     }

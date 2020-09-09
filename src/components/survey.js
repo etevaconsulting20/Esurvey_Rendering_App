@@ -34,17 +34,30 @@ class SurveyComponent extends Component {
             response:JSON.stringify(survey.data)
         }
         console.log("response model.........",responseModel)
-        this.props.saveSurvey(responseModel);
+        // this.props.saveSurvey(responseModel);
         
     }
-   
+//    componentDidMount(){
+//     const script1 = document.createElement("script");
+//     script1.src = "https://unpkg.com/emotion-ratings@2.0.1/dist/emotion-ratings.js";
+//     script1.async = true;
+//     document.body.appendChild(script1);
+
+//     const script2 = document.createElement("script");
+//     script2.src = "https://surveyjs.azureedge.net/1.8.0/surveyjs-widgets.js";
+//     script2.async = true;
+//     document.body.appendChild(script2);
+//     console.log("component did mount................")
+//    }
     render() {
         var model = new Survey.Model(this.surveyConfig.surveyScript);
   
         return (
             <>
                 <Survey.Survey model={model} onComplete={this.onComplete}></Survey.Survey>
+               
             </>
+            
         )
     }
 }
