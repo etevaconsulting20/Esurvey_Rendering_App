@@ -37,7 +37,7 @@ class SurveyComponent extends Component {
         //     response:JSON.stringify(survey.data)
         // }
         // this.props.saveSurvey(responseModel);w2 b
-        
+        console.log("response...............",survey.data)
     }
    
     render() {
@@ -46,6 +46,7 @@ class SurveyComponent extends Component {
         let data = this.props.data?this.props.data:null;
         if(data){
             model.data=data
+            model.mode='display'
         }
         return (
             <>

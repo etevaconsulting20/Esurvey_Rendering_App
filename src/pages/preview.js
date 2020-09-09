@@ -23,7 +23,9 @@ class Survey extends Component {
       render(){
           let responseData= JSON.parse(localStorage.getItem("response"))
           return(
-            <SurveyComponent id={1} config={{ ...defaultScript,custommCSS:{...defaultScript.custommCSS,mainColor:"red",textColor:"red"}}} data={responseData} ></SurveyComponent>
+              <div> 
+                 <SurveyComponent id={1} config={{ ...defaultScript,custommCSS:{...defaultScript.custommCSS,mainColor:"red",textColor:"red"}}} data={responseData} ></SurveyComponent>
+              </div>
           )
       }
 

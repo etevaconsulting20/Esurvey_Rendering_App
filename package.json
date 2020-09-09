@@ -19,7 +19,7 @@
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^1.0.0",
     "styled-components": "^5.1.1",
-    "surveyjs-widgets": "^1.8.0"
+    "surveyjs-widgets": "^1.8.1"
   },
   "scripts": {
     "start": "react-scripts start",
