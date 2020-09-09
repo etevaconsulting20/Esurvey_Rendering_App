@@ -1,4 +1,4 @@
 export const appConfig={
-    apiUrl:"https://localhost:44391/api",
-    appUrl:"http://localhost:3001"
+    apiUrl:"https://esurveyapi.azurewebsites.net/api",
+    appUrl:"https://esurveyapp.azurewebsites.net"
 }

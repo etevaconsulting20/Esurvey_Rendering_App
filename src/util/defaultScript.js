@@ -23,6 +23,12 @@ var defaultScript = {
                     }
                 ]
             },
+            {
+                type: "emotionsratings",
+                name: "emotionsratings-widget-2",
+                title: "Please rate the movie you've just watched",
+                choices: ["1", "2", "3", "4", "5"]
+            },
             { type: "text", inputType: "date", name: "dateOFBirth", title: "What is your date of birth", isRequired: true },
 
             {

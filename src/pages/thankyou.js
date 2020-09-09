@@ -3,14 +3,14 @@ import {Message} from "semantic-ui-react"
 
 
 const ThankyouPage = () => {
-    useEffect(()=>{
-        window.parent.postMessage(
-            JSON.stringify({
-                type: "survey-submit",
-                message: "survey response completed"
-            }), document.referrer
-        );
-    })
+    // useEffect(()=>{
+    //     window.parent.postMessage(
+    //         JSON.stringify({
+    //             type: "survey-submit",
+    //             message: "survey response completed"
+    //         }), document.referrer
+    //     );
+    // })
     return (
         <>
             <div style={{ margin: "auto" }}>

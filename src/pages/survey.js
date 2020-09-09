@@ -32,37 +32,43 @@ class Survey extends Component {
         this.props.saveSurvey(responseModel);
       }
 
-    render() {
-        const { surveyScript, loading, surveyId } = this.props
-        // const surveyType = surveyScript.type;
-        return (
+      render(){
+          return(
+            <SurveyComponent id={1} config={{ ...defaultScript}} ></SurveyComponent>
+          )
+      }
 
-            <>
-                {
-                    loading ? <Dimmer active>
-                        <Loader>Loading</Loader>
-                    </Dimmer> : null
-                }
-                {/* {surveyScript ? <SurveyComponent id={surveyId} config={{ ...defaultScript, surveyScript: surveyScript }} ></SurveyComponent> : <p>no script </p>} */}
+    // render() {
+    //     const { surveyScript, loading, surveyId } = this.props
+    //     // const surveyType = surveyScript.type;
+    //     return (
+
+    //         <>
+    //             {
+    //                 loading ? <Dimmer active>
+    //                     <Loader>Loading</Loader>
+    //                 </Dimmer> : null
+    //             }
+    //             {/* {surveyScript ? <SurveyComponent id={surveyId} config={{ ...defaultScript, surveyScript: surveyScript }} ></SurveyComponent> : <p>no script </p>} */}
            
-                {surveyScript ? 
-                <>
-                {surveyScript.type == "Survey" &&  <SurveyComponent id={surveyId} config={{ ...defaultScript, surveyScript: surveyScript }} ></SurveyComponent>}
-                {surveyScript.type == 'ChatBot' &&
-                    <>{surveyScript.questions && surveyScript.questions.length > 0 &&
-                    <ChatBot
-                    steps={surveyScript.questions}
-                    setJson={this.setJson}
-                    postAnswerJSON={this.postAnswerJSON}
-                    botAvatar={surveyScript.logo}
-                    headerTitle={surveyScript.title}
-                    ></ChatBot>
-                    }</>}
-                </> : 
-                <p>no script </p>}
-            </>
-        )
-    }
+    //             {surveyScript ? 
+    //             <>
+    //             {surveyScript.type == "Survey" &&  <SurveyComponent id={surveyId} config={{ ...defaultScript, surveyScript: surveyScript }} ></SurveyComponent>}
+    //             {surveyScript.type == 'ChatBot' &&
+    //                 <>{surveyScript.questions && surveyScript.questions.length > 0 &&
+    //                 <ChatBot
+    //                 steps={surveyScript.questions}
+    //                 setJson={this.setJson}
+    //                 postAnswerJSON={this.postAnswerJSON}
+    //                 botAvatar={surveyScript.logo}
+    //                 headerTitle={surveyScript.title}
+    //                 ></ChatBot>
+    //                 }</>}
+    //             </> : 
+    //             <p>no script </p>}
+    //         </>
+    //     )
+    // }
 }
 const mapStateToProps = ({ surveyReducers }) => {
     return { ...surveyReducers }

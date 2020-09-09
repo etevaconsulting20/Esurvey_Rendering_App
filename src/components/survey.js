@@ -4,9 +4,8 @@ import "../survey-lib/survey-react/survey.min.css"
 import { bindActionCreators } from "redux";
 import {saveSurvey} from '../actions/index'
 import { connect } from "react-redux";
-
-
-
+import * as Widgets from 'surveyjs-widgets';
+  
 class SurveyComponent extends Component {
     constructor(props) {
         super(props)
@@ -25,21 +24,29 @@ class SurveyComponent extends Component {
             .StylesManager
             .applyTheme();
 
-
+        Widgets.emotionsratings(Survey)
     }
+    // componentDidMount(){
+    //     let data = 
+    // }
     onComplete=(survey, options)=> {
-        let responseModel={
-            id:this.props.id,
-            type:this.props.config.surveyScript.type,
-            response:JSON.stringify(survey.data)
-        }
-        this.props.saveSurvey(responseModel);
+        localStorage.setItem("response",JSON.stringify(survey.data))
+        // let responseModel={
+        //     id:this.props.id,
+        //     type:this.props.config.surveyScript.type,
+        //     response:JSON.stringify(survey.data)
+        // }
+        // this.props.saveSurvey(responseModel);w2 b
         
     }
    
     render() {
+        debugger
         var model = new Survey.Model(this.surveyConfig.surveyScript);
-  
+        let data = this.props.data?this.props.data:null;
+        if(data){
+            model.data=data
+        }
         return (
             <>
                 <Survey.Survey model={model} onComplete={this.onComplete}></Survey.Survey>

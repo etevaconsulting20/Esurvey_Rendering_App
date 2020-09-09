@@ -3,6 +3,7 @@ import SurveyComponent from "../components/survey"
 import { HashRouter as Router, Switch, Route } from "react-router-dom"
 import SurveyPage from "../pages/survey"
 import ThankyouPage from "../pages/thankyou"
+import Preview from "../pages/preview"
 
 class MainApp extends Component {
 
@@ -12,6 +13,8 @@ class MainApp extends Component {
             <Router>
                 <Switch>
                     <Route exact path="/thankyou" component={ThankyouPage}>
+                    </Route>
+                    <Route exact path="/preview" component={Preview}>
                     </Route>
                     <Route path="/" component={SurveyPage}>
                     </Route>
